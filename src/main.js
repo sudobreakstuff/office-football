@@ -9,6 +9,7 @@ import { TournamentScene } from './scenes/TournamentScene.js';
 import { CustomizeScene } from './scenes/CustomizeScene.js';
 import { StatsScene } from './scenes/StatsScene.js';
 import { SetupSupabaseScene } from './scenes/SetupSupabaseScene.js';
+import { SpectateScene } from './scenes/SpectateScene.js';
 
 const config = {
   type: Phaser.AUTO,
