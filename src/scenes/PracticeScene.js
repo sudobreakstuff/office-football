@@ -5,7 +5,7 @@ import { defaultCharacter } from '../data/characterParts.js';
 
 export class PracticeScene extends GameScene {
   constructor() {
-    super({ key: 'PracticeScene' });
+    super('PracticeScene');
   }
 
   init(data) {
