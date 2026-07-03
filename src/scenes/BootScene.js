@@ -79,9 +79,7 @@ export class BootScene extends Phaser.Scene {
   }
 
   create() {
-    console.log('[BootScene] create() running');
     this.time.delayedCall(500, () => {
-      console.log('[BootScene] transitioning to MenuScene');
       this.scene.start('MenuScene');
     });
   }
