@@ -8,8 +8,19 @@ export const GOAL_WIDTH = 30;
 export const GOAL_HEIGHT = 200;
 export const GOAL_Y = (PITCH_HEIGHT - GOAL_HEIGHT) / 2;
 
-export const SUPABASE_URL = 'https://YOUR_PROJECT_ID.supabase.co';
-export const SUPABASE_ANON_KEY = 'YOUR_ANON_KEY';
+const stored = (() => { try { return JSON.parse(localStorage.getItem('off-football-supabase') || '{}'); } catch { return {}; } })();
+
+export const SUPABASE_URL = stored.url || '';
+export const SUPABASE_ANON_KEY = stored.key || '';
+
+export function setSupabaseCredentials(url, key) {
+  localStorage.setItem('off-football-supabase', JSON.stringify({ url, key }));
+  return true;
+}
+
+export function hasSupabaseCredentials() {
+  return !!(SUPABASE_URL && SUPABASE_ANON_KEY && SUPABASE_URL !== '');
+}
 
 export const MATCH_DURATION = 120;
 export const GOAL_LIMIT = 5;
