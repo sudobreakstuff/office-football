@@ -14,8 +14,8 @@ import { Celebration } from '../ui/Celebration.js';
 import { defaultCharacter } from '../data/characterParts.js';
 
 export class GameScene extends Phaser.Scene {
-  constructor() {
-    super({ key: 'GameScene' });
+  constructor(key = 'GameScene') {
+    super({ key });
   }
 
   init(data) {

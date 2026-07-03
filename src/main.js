@@ -11,6 +11,8 @@ import { StatsScene } from './scenes/StatsScene.js';
 import { SetupSupabaseScene } from './scenes/SetupSupabaseScene.js';
 import { SpectateScene } from './scenes/SpectateScene.js';
 
+console.log('[OfficeFootball] Initializing Phaser...');
+
 const config = {
   type: Phaser.AUTO,
   width: GAME_WIDTH,
@@ -42,17 +44,13 @@ const config = {
   ],
 };
 
-try {
-  new Phaser.Game(config);
-} catch (err) {
-  const el = document.getElementById('game-container');
-  if (el) {
-    el.innerHTML = `<div style="color:#ff4444;font-family:Arial,sans-serif;padding:40px;text-align:center;">
-      <h2>Game failed to start</h2>
-      <p style="font-family:monospace;font-size:12px;">${err.message}</p>
-      <pre style="color:#888;font-size:10px;">${err.stack}</pre>
-    </div>`;
-  }
-  console.error('Phaser init error:', err);
-}
+console.log('[OfficeFootball] Config:', JSON.stringify({ type: config.type, width: config.width, height: config.height, physics: config.physics.default }));
 
+const game = new Phaser.Game(config);
+console.log('[OfficeFootball] Game instance created:', !!game);
+
+window.__OF_GAME = game;
+
+game.events.on('ready', () => {
+  console.log('[OfficeFootball] Game ready event fired');
+});

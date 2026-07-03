@@ -7,6 +7,7 @@ export class MenuScene extends Phaser.Scene {
   }
 
   create() {
+    console.log('[MenuScene] create() running');
     this.cameras.main.setBackgroundColor('#1a1a2e');
 
     const cx = GAME_WIDTH / 2;
