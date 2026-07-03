@@ -26,9 +26,8 @@ const config = {
       debug: false,
     },
   },
-  scale: {
-    mode: Phaser.Scale.FIT,
-    autoCenter: Phaser.Scale.CENTER_BOTH,
+  input: {
+    activePointers: 3,
   },
   scene: [
     BootScene,

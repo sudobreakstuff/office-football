@@ -12,6 +12,12 @@ export class MenuScene extends Phaser.Scene {
 
     const cx = GAME_WIDTH / 2;
 
+    this.input.on('pointerdown', (pointer) => {
+      console.log('[MenuScene] Click at:', pointer.x, pointer.y);
+      const dot = this.add.circle(pointer.x, pointer.y, 8, 0xff0000, 0.8);
+      this.time.delayedCall(500, () => dot.destroy());
+    });
+
     this.add.text(cx, 80, 'OFFICE', {
       fontSize: '72px',
       fontFamily: 'Arial Black, Arial, sans-serif',
