@@ -41,6 +41,7 @@ export class MenuScene extends Phaser.Scene {
       { text: 'CUSTOMIZE', scene: 'CustomizeScene', desc: 'Design your bobblehead' },
       { text: 'STATS', scene: 'StatsScene', desc: 'Player stats & leaderboard' },
       { text: 'WATCH LIVE', scene: 'SpectateScene', desc: 'Spectate ongoing games' },
+      { text: '⚙ SUPABASE SETUP', scene: 'SetupSupabaseScene', desc: 'Connect your Supabase backend' },
     ];
 
     const startY = 280;
