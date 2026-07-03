@@ -42,4 +42,17 @@ const config = {
   ],
 };
 
-new Phaser.Game(config);
+try {
+  new Phaser.Game(config);
+} catch (err) {
+  const el = document.getElementById('game-container');
+  if (el) {
+    el.innerHTML = `<div style="color:#ff4444;font-family:Arial,sans-serif;padding:40px;text-align:center;">
+      <h2>Game failed to start</h2>
+      <p style="font-family:monospace;font-size:12px;">${err.message}</p>
+      <pre style="color:#888;font-size:10px;">${err.stack}</pre>
+    </div>`;
+  }
+  console.error('Phaser init error:', err);
+}
+

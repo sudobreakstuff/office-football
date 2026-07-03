@@ -20,9 +20,6 @@ export class PracticeScene extends GameScene {
   create() {
     super.create();
 
-    this.input2 = this.input1;
-    this.input1 = this.input1;
-
     const goalTarget = { x: PITCH_WIDTH - 100, y: PITCH_HEIGHT / 2 };
     this.aiBot = new AIBot(this.player2, this.ball, this.player1, goalTarget, this.difficulty);
 
